@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app_main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app_main.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app_test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app_test.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tinyurl.iml" filepath="$PROJECT_DIR$/.idea/modules/tinyurl.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tinyurl_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tinyurl_main.iml" group="tinyurl" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tinyurl_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tinyurl_test.iml" group="tinyurl" />

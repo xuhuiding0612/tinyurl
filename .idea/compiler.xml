@@ -2,8 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="tinyurl_main" target="1.9" />
-      <module name="tinyurl_test" target="1.9" />
+      <module name="app_main" target="1.8" />
+      <module name="app_test" target="1.8" />
+      <module name="tinyurl_main" target="1.8" />
+      <module name="tinyurl_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

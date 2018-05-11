@@ -1,35 +1,35 @@
-group 'com.myprojects.tinyurl'
-version '1.0-SNAPSHOT'
-
 buildscript {
     repositories {
-        mavenCentral()
+        mavenLocal()      // ~/.m2/repoitory/
+        mavenCentral()    // https://repo1.maven.org/maven2/
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-
-sourceCompatibility = 1.9
-
-repositories {
-    mavenCentral()
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'application'
+    mainClassName = 'com.myprojects.tinyurl.Application'
 }
 
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.4'
-    // https://mvnrepository.com/artifact/org.json/json
-    compile group: 'org.json', name: 'json', version: '20171018'
+subprojects {
+    apply plugin: 'maven' // gradle install
 
-    // Associate with database
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("com.h2database:h2")
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    afterEvaluate {
+        if (project.plugins.hasPlugin('java')) {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    // gradle publish
+    // ~/.m2/repoitory/com/company/project/<*>/0.0.1/<prod>-0.0.1.jar
+    project.group = 'com.myprojects.tinyurl'
+    project.version = '1.0-SNAPSHOT'
 }
